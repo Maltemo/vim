@@ -1,0 +1,163 @@
+# /etc/inputrc - global inputrc for libreadline
+# See readline(3readline) and `info rluserman' for more information.
+
+# Be 8 bit clean.
+set input-meta on
+set output-meta on
+
+# To allow the use of 8bit-characters like the german umlauts, uncomment
+# the line below. However this makes the meta key not work as a meta key,
+# which is annoying to those which don't need to type in 8-bit characters.
+
+# set convert-meta off
+
+# try to enable the application keypad when it is called.  Some systems
+# need this to enable the arrow keys.
+# set enable-keypad on
+
+# see /usr/share/doc/bash/inputrc.arrows for other codes of arrow keys
+
+# do not bell on tab-completion
+# set bell-style none
+# set bell-style visible
+
+# some defaults / modifications for the emacs mode
+$if mode=emacs
+
+	# allow the use of the Home/End keys
+	"\e[1~": beginning-of-line
+	"\e[4~": end-of-line
+
+	# allow the use of the Delete/Insert keys
+	"\e[3~": delete-char
+	"\e[2~": quoted-insert
+
+	# mappings for "page up" and "page down" to step to the beginning/end
+	# of the history
+	# "\e[5~": beginning-of-history
+	# "\e[6~": end-of-history
+
+	# alternate mappings for "page up" and "page down" to search the history
+	# "\e[5~": history-search-backward
+	# "\e[6~": history-search-forward
+
+	# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+	"\e[1;5C": forward-word
+	"\e[1;5D": backward-word
+	"\e[5C": forward-word
+	"\e[5D": backward-word
+	"\e\e[C": forward-word
+	"\e\e[D": backward-word
+
+	$if term=rxvt
+		"\e[7~": beginning-of-line
+		"\e[8~": end-of-line
+		"\eOc": forward-word
+		"\eOd": backward-word
+	$endif
+
+	# for non RH/Debian xterm, can't hurt for RH/Debian xterm
+	# "\eOH": beginning-of-line
+	# "\eOF": end-of-line
+
+	# for freebsd console
+	# "\e[H": beginning-of-line
+	# "\e[F": end-of-line
+
+$endif
+
+!-------------------------------------------------------------------------------
+!urxvt
+!-------------------------------------------------------------------------------
+
+Xft.dpi: 120
+Xft.antialiasing: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.lcdfilter: lcddefault
+
+*.cursorColor: #C1C1C1
+
+URxvt.borderColor: #282f39
+URxvt.borderless: true
+URxvt.internalBorder: 6
+
+
+URxvt.underlineColor: #333333
+URxvt.highlightColor: #6eddba
+URxvt.highlightTextColor: #282f39
+
+URxvt.scrollstyle: plain
+URxvt.scrollBar: false
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+
+
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.depth: 35
+
+!- Perl Extension
+URxvt.perl-ext-common: default,matcher,url-select,clipboard
+URxvt.url-launcher: chromium
+URxvt.matcher.button: 1
+
+!- Copy/paste
+URxvt.iso14755: False
+URxvt.keysym.Shift-Alt-C: perl:clipboard:copy
+URxvt.keysym.Shift-Alt-V: perl:clipboard:paste
+
+URxvt.underlineURLs: true
+#URxvt.font.xft.FontAwesome\-g: size=8
+#URxvt.font:xft:Inconsolata\-g: size=8
+URxvt.font:xft:EnvyCodeR\-g: size=9
+URxvt.boldFont:
+URxvt.transparent: false
+URxvt.shading: 30
+URxvt.geometry: 60x22
+
+!-Urgent Terminal for Notification
+URxvt*urgentOnBell: true
+URxvt*visualBell: alse
+
+!colors scheme
+
+URxvt.background:    #282f39
+URxvt.foreground:     #C1C1C1
+
+URxvt.colorBD:           #CFCFCF
+URxvt.colorUL:           #A0A0A0
+URxvt.colorIT:            #686868
+
+!BLK
+URxvt.color0:     #303030
+URxvt.color8:     #686868
+
+!RED
+URxvt.color9:     #F28080
+URxvt.color1:     #E26C6C
+
+!GRN
+URxvt.color10:    #A3D572
+URxvt.color2:      #6D9E3F
+
+!BLU
+URxvt.color12:    #98CBFE
+URxvt.color4:      #6095C5
+
+!YEL
+URxvt.color11:    #EFBD8B
+URxvt.color3:      #B58858
+
+!CYN
+URxvt.color14:    #75DAA9
+URxvt.color6:      #3BA275
+
+!MAG
+URxvt.color13:    #E5B0FF
+URxvt.color5:      #AC7BDE
+
+!WHT
+URxvt.color7:      #AAAAAA
+URxvt.color15:    #C1C1C1
