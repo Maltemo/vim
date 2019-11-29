@@ -22,6 +22,18 @@ filetype plugin indent on	" Determine le type de charge les plugins associés
 
 set autoindent		" always set autoindenting on
 
+:autocmd InsertEnter,InsertLeave * set cul! "Highlight line when in insert mode 
+
+" Changes cursor when in insert mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
 """""""""""""""""""""""""""
 
 " Ajout des numeros de ligne
