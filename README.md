@@ -7,7 +7,6 @@ VIM or VI iMproved is a text-editor in the terminal.
 ### What's vimrc ?
 The file `.vimrc` is the configuration file of vim. It enables users to customize and adapt this text-editor to their needs. 
 
-
 ## Installation
 
 In order to install this configuration, you will have to execute those command-lines in your terminal :
@@ -39,6 +38,7 @@ You can toggle it with `F8`.
 
 ### Snipmate
 [SnipMate](https://github.com/garbas/vim-snipmate) aims to provide support for textual snippets.
+Personal snippets can be found in `.vim/snippets/` folder.
 
 ### Vim-Airline
 [Vim-Airline](https://github.com/vim-airline/vim-airline) Displays a beautiful bar at the bottom of vim

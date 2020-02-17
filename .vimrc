@@ -2,9 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-set backup		" keep a backup file
-set backupdir=~/.vim/backup	"Necessite la création du dossier au préalable
-
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -21,8 +18,6 @@ set hlsearch		" Coloration des mots correspondant a la derniere recherche
 filetype plugin indent on	" Determine le type de charge les plugins associés
 
 set autoindent		" always set autoindenting on
-
-:autocmd InsertEnter,InsertLeave * set cul! "Highlight line when in insert mode 
 
 " Changes cursor when in insert mode
 let &t_SI = "\e[6 q"
@@ -48,7 +43,7 @@ execute pathogen#infect()
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 
 " Création des touches de raccourcis
-nnoremap <silent> <F8> :TlistToggle<CR>
+"nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Affiche les tabulations
